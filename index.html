@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+</head>
+<body>
+    <script>
+        var textarea=document.createElement("textarea")
+        textarea.style.marginLeft="10%"
+        textarea.style.width="15%"
+        textarea.style.marginTop="10%"
+
+        var div=document.createElement("div")
+
+
+        var button=document.createElement("button")
+        button.style.backgroundColor="lightblue"
+        button.style.marginLeft="15%"
+        button.innerText="Speaker"
+
+        document.body.appendChild(textarea)
+        document.body.appendChild(div)
+        document.body.appendChild(button)
+
+        button.addEventListener("click",()=>{
+            let text=new SpeechSynthesisUtterance(textarea.value);
+            speechSynthesis.speak(text)
+            // div.innerText= text[textarea]
+        })
+
+
+
+    </script>
+</body>
+</html>
